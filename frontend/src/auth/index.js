@@ -1,7 +1,7 @@
 import {API} from '../config';
 
 
-export const signup = (user) =>{
+export const signup = user => {
     return fetch(`${API}/signup`,{
         method: "POST",
         headers:{
@@ -10,13 +10,13 @@ export const signup = (user) =>{
         },
         body: JSON.stringify(user)
     }).then(response=>{
-        return response.json()
+        return response.json();
     }).catch(err => {
         console.log(err);
     });
 };
 
-export const signin = (user) =>{
+export const signin = user =>{
     return fetch(`${API}/signin`,{
         method: "POST",
         headers:{
@@ -25,7 +25,7 @@ export const signin = (user) =>{
         },
         body: JSON.stringify(user)
     }).then(response=>{
-        return response.json()
+        return response.json();
     }).catch(err => {
         console.log(err);
     });
@@ -52,7 +52,7 @@ export const signout = (next) => {
 
 
 export const isAuthenticated = () => {
-    if(typeof window !== 'undefined') return false;
+    if(typeof window == 'undefined') return false;
     if(localStorage.getItem('jwt')) return JSON.parse(localStorage.getItem('jwt'));
     return false; 
 };

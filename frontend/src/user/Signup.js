@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import {Link} from 'react-router-dom';
 import Layout from '../core/Layout';
-import {signup} from '../auth';
+import {signup} from '../auth/index';
 
 const Signup = () => {
 
@@ -47,7 +47,7 @@ const Signup = () => {
         </form>
     )
         const showError = () => (
-            <div className = "alert alert-danger" style ={{display:error ? '': 'none'}}>
+            <div className = "alert alert-danger" style ={{display: error ? '': 'none'}}>
             {error}
             </div>
         );
@@ -63,7 +63,6 @@ const Signup = () => {
         {showSuccess()}
         {showError()}
         {signUpForm()}
-        {JSON.stringify(values)}
         </Layout>
         );
 };

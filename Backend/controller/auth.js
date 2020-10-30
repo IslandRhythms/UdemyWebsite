@@ -3,7 +3,7 @@ const {errorHandler} = require('../helpers/dberrorhandler');
 const jwt = require('jsonwebtoken');
 const expressJwt = require('express-jwt');
 
-exports.signup = (req,res,next) => {
+exports.signup = (req,res) => {
     console.log('req.body',req.body);
     const user = new User(req.body);
     user.save((err,user) => {
@@ -17,7 +17,6 @@ exports.signup = (req,res,next) => {
         res.json({
             user
         });
-        next();
     });
 };
 
@@ -72,9 +71,4 @@ exports.isAdmin = (req,res,next) => {
     });
 
     next();
-};
-
-
-exports.test = (req,res) => {
-    res.json({message:"hello there"});
 };
