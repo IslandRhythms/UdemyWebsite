@@ -66,10 +66,11 @@ const AddCategory = () => {
                 {showSuccess()}
                 {showError()}
               {newCategoryForm()}
+              {goBack()}
                </div>
            </div>
         </Layout>
-    )
+    );
     
 };
 
