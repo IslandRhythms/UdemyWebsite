@@ -5,7 +5,7 @@ import {signin, authenticate, isAuthenticated} from '../auth/index';
 
 const Signin = () => {
 
-    const [values,setValues] = useState({email:'admin@gmail.com',password:'admin1',error:'',loading:false, redirectToReferrer: false,});
+    const [values,setValues] = useState({email:'',password:'',error:'',loading:false, redirectToReferrer: false,});
     const {email,password,loading,error,redirectToReferrer} = values;
     const {user} = isAuthenticated();
     const handleChange = name => event =>{
